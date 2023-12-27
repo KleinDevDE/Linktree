@@ -56,3 +56,8 @@ function getContentFromURL(url) {
 function getRandomOfArray(array){
     return array[Math.floor(Math.random() * array.length)];
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    insertCurrentAge();
+    loadQuote();
+});
