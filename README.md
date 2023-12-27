@@ -13,5 +13,4 @@ Also visible at https://links.kleindev.de
 ![Preview](preview.png)
 
 ### Copyright
-Design by [AlphaReady](https://www.alphaready.co)  
-Logical part by [KleinDev](https://github.com/KleinDevDE)
+Background-Image by [coolvector on Freepik](https://www.freepik.com/free-vector/dark-hexagonal-background-with-gradient-color_12804210.htm#query=background&position=21&from_view=search&track=sph)
