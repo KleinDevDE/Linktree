@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
+.bg_light {
+    background-image: url('../images/bg_light.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.bg_dark {
+    background-image: url('../images/bg_dark.jpg');
+    background-position: center;
+    background-size: auto;
+}
+body { @apply bg_dark; }
+/*body.dark { @apply bg_dark; }*/
+/*@media (prefers-color-scheme: dark) {*/
+/*    body { @apply bg_dark; }*/
+/*}*/
+
+button {
+    @apply bg-gray-300 backdrop-blur-sm bg-opacity-20 hover:bg-opacity-50 rounded-xl py-3 px-5 w-full;
+}
+
+
+.logo {
+    @apply w-10 h-10;
+}
+
+.pulse {
+    animation: pulse 0.5s;
+    animation-timing-function: ease-out;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+
+button.bg-github { background-color: #1c2128; }
+button.bg-github:hover { background-color: #3e4959; }
+.bg-github { background: radial-gradient(ellipse at 40% 0%, #bf398910 0, transparent 75%), radial-gradient(ellipse at 60% 0%, #096bde10 0, transparent 75%); }
+.bg-github:hover img { @apply pulse; }
+
+.bg-gitlab { background:linear-gradient(120deg, #fca326, #fc6d26, #e24329, #554488); }
+.bg-gitlab:hover { background:linear-gradient(120deg, #554488, #e24329, #fc6d26, #fca326); }
+.bg-gitlab:hover img { @apply pulse; }
+
+.bg-discord { background-color: #5865f2 !important; }
+.bg-discord:hover { background-color: #5b6eae !important; }
+.bg-discord:hover img { animation: rotate 1.2s linear infinite; }
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(360deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*.bg-mail { background-color: #4e88a4 !important; }*/
+/*.bg-mail:hover { background-color: #61a9cc !important; }*/
+.bg-mail:hover img { @apply pulse; }
+
+.bg-battle-net { background-color: #006ed4 !important; }
+.bg-battle-net:hover { background-color: #005ec0 !important; }
+.bg-battle-net:hover img { @apply pulse; }
+
+.bg-steam { background:linear-gradient(30deg, #000000, #00adee); }
+.bg-steam:hover { background:linear-gradient(30deg, #00adee, #000000); }
+.bg-steam:hover img { @apply pulse; }
+
+.bg-epic-games { background-color: #000000 !important; }
+.bg-epic-games:hover { background-color: #0a0a0a !important; }
+.bg-epic-games:hover img { @apply pulse; }
+
+.bg-riot-games { background-color: #d2393b !important; }
+.bg-riot-games:hover { background-color: #b32a2c !important; }
+.bg-riot-games:hover img { @apply pulse; }

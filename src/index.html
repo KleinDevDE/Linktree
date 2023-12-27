@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <title>KleinDev`s Linktree</title>
+    <link type="application/json+oembed" href="/oembed.json"/>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="google" content="notranslate">
+    <meta name="theme-color" content="#6FC0D2">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=yes, url=yes">
+    <meta name="Description"
+          CONTENT="Ein simpler Linktree mit allen Links die man braucht um mehr über mich zu erfahren :)">
+
+
+    <!-- Opengraph Meta -->
+    <meta property="og:title" content="Offizielle Link-Sammlung von KleinDev"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://links.kleindev.de"/>
+    <meta property="og:description"
+          content="Ein simpler Linktree mit allen Links die man braucht um mehr über mich zu erfahren :)"/>
+    <meta property="og:image" content="https://links.kleindev.de/assets/img/avatar.jpeg"/>
+    <meta property="og:image:secure_url" content="https://links.kleindev.de/assets/img/mavatar.jpeg"/>
+    <meta property="og:image:type" content="image/jpeg"/>
+    <meta property="og:image:width" content="400"/>
+    <meta property="og:image:height" content="300"/>
+    <meta property="og:image:alt" content="Ein Bild meinerselbst"/>
+    <meta property="og:locale" content="de_DE"/>
+    <meta property="og:locale:alternate" content="en_US"/>
+    <meta property="og:website" content="https://links.kleindev.de"/>
+
+    <!-- Twitter Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="links.kleindev.de">
+    <meta property="twitter:url" content="https://links.kleindev.de/">
+    <meta name="twitter:title" content="Offizielle Link-Sammlung von KleinDev">
+    <meta name="twitter:description"
+          content="Ein simpler Linktree mit allen Links die man braucht um mehr über mich zu erfahren :)">
+    <meta name="twitter:image" content="https://links.kleindev.de/assets/img/avatar.jpeg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous"/>
+</head>
+
+<body class="text-white">
+<header class="mt-10 mx-auto bg-black bg-opacity-60 backdrop-blur-sm w-fit p-5 rounded-xl">
+    <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="min-w-[140px] flex justify-center">
+            <img class="w-[64px] h-[64px] md:w-[120px] md:h-[120px] rounded-full shadow-white drop-shadow-2xl" src="assets/images/avatar.jpeg"
+                 alt="Profile picture">
+        </div>
+        <div class="text-center m-auto">
+            <h1 class="text-3xl font-weight-bold">KleinDev</h1>
+            <p>
+                Full-Stack Developer<br>
+                <span id="age"></span> Jahre alt<br>
+            </p>
+        </div>
+    </div>
+</header>
+
+<section id="quote_section" class="mt-10 mx-auto text-center bg-black bg-opacity-60 backdrop-blur-sm w-fit p-5 rounded-xl">
+    <blockquote id="quote" data-src="/quotes.json">
+        <div id="quoteText"></div>
+        <footer id="quoteFooter"></footer>
+    </blockquote>
+    <p class="text-left pt-3">
+        Anderes Zitat <i class="fas fa-sync-alt" onclick="loadQuote()"></i>
+    </p>
+</section>
+
+
+<section class="mt-10 mx-auto text-center bg-black bg-opacity-60 backdrop-blur-sm max-w-fit px-10 md:px-28 pt-10 pb-5 rounded-xl">
+    <h3 class="font-bold text-xl mb-5">Software-Entwicklung</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 justify-between mb-10">
+        <a href="https://github.com/KleinDevDE" class="">
+            <button class="bg-github">
+                <div class="grid grid-cols-[3rem,10rem] md:grid-cols-[3rem,10rem] items-center justify-center">
+                    <img src="assets/images/logos/GitHub_light.png" alt="GitHub Logo" class="logo">
+                    <span>GitHub<br>@KleinDevDE</span>
+                </div>
+            </button>
+        </a>
+        <a href="https://gitlab.com/KleinDevDE" class="">
+            <button class="bg-gitlab">
+                <div class="grid grid-cols-[3rem,10rem] md:grid-cols-[3rem,10rem] items-center justify-center">
+                    <img src="assets/images/logos/Gitlab.png" alt="GitLab Logo" class="logo">
+                    <span>GitLab<br>@KleinDevDE</span>
+                </div>
+            </button>
+        </a>
+    </div>
+
+    <h3 class="font-bold text-xl mb-5">Kommunikation</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 justify-between mb-10">
+        <a href="https://discord.com/users/221313993321480192" class="w-full" target="_blank">
+            <button class="bg-discord">
+                <div class="grid grid-cols-[3rem,10rem] md:grid-cols-[3rem,10rem] items-center justify-center">
+                    <img src="assets/images/logos/Discord_light.png" alt="Discord Logo" class="w-12 h-10">
+                    <span>Discord<br>@kleindev</span>
+                </div>
+            </button>
+        </a>
+        <a href="mailto:kontakt@kleindev.de" class="w-full" target="_blank">
+            <button class="bg-mail">
+                <div class="grid grid-cols-[3rem,10rem] md:grid-cols-[3rem,10rem] items-center justify-center">
+                    <img src="assets/images/logos/Mail.png" alt="Mail Logo" class="logo">
+                    <span>Mail<br>kontakt@kleindev.de</span>
+                </div>
+            </button>
+        </a>
+    </div>
+
+
+    <h3 class="font-bold text-xl mb-5">Gaming</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 justify-between mb-10">
+        <a href="https://overwatch.blizzard.com/en-us/career/KleinDev-2552/" class="w-full" target="_blank">
+            <button class="bg-battle-net">
+                <div class="grid grid-cols-[3rem,10rem] md:grid-cols-[3rem,10rem] items-center justify-center">
+                    <img src="assets/images/logos/BattletNet.png" alt="BattletNet Logo" class="logo">
+                    <span>Battle.Net<br>KleinDev #2552</span>
+                </div>
+            </button>
+        </a>
+        <a href="https://steamcommunity.com/id/kleindev/" class="w-full" target="_blank">
+            <button class="bg-steam">
+                <div class="grid grid-cols-[3rem,10rem] md:grid-cols-[3rem,10rem] items-center justify-center">
+                    <img src="assets/images/logos/Steam.png" alt="Steam Logo" class="logo">
+                    <span>Steam<br>KleinDev</span>
+                </div>
+            </button>
+        </a>
+        <a href="https://store.epicgames.com/de/u/9999ccb6a6794525b9016ada5036bc6c" class="w-full" target="_blank">
+            <button class="bg-epic-games">
+                <div class="grid grid-cols-[3rem,10rem] md:grid-cols-[3rem,10rem] items-center justify-center">
+                    <img src="assets/images/logos/EpicGames.png" alt="EpicGames Logo" class="w-10 h-12">
+                    <span>Epic Games<br>KleinDev</span>
+                </div>
+            </button>
+        </a>
+        <a href="https://tracker.gg/valorant/profile/riot/KleinDev%232979/overview" class="w-full" target="_blank">
+            <button class="bg-riot-games">
+                <div class="grid grid-cols-[3rem,10rem] md:grid-cols-[3rem,10rem] items-center justify-center">
+                    <img src="assets/images/logos/Riot.png" alt="Riot Logo" class="logo">
+                    <span>Riot Games<br>KleinDev #2979</span>
+                </div>
+            </button>
+        </a>
+    </div>
+</section>
+
+
+<section class="mx-auto p-3 text-center text-gray-600">
+    <a href="https://www.freepik.com/free-vector/dark-hexagonal-background-with-gradient-color_12804210.htm#query=background&position=21&from_view=search&track=sph">Image
+        by coolvector</a> on Freepik
+</section>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="assets/js/general.js"></script>
+<script src="assets/js/social_media.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        insertCurrentAge();
+        loadQuote();
+        // loadGitHubData();
+    });
+</script>
+</body>
+
+</html>

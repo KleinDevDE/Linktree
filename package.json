@@ -1,0 +1,39 @@
+{
+  "name": "linktree",
+  "version": "2.0.0",
+  "description": "Ein simpler Linktree mit allen Links die man braucht um mehr über mich zu erfahren :)",
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:parcel": "parcel serve ./src/index.html",
+    "dev:css": "tailwindcss -o src/assets/css/tailwind.css --watch",
+    "build": "npm-run-all build:empty_dist build:css build:parcel build:static_files",
+    "build:empty_dist": "node -e \"var fs = require('fs'); try {fs.rmdirSync('dist',{recursive: true})} catch(e){}; process.exit(0);\"",
+    "build:parcel": "parcel build ./src/index.html",
+    "build:css": "tailwindcss -o src/assets/css/tailwind.css --minify",
+    "build:static_files": "copyfiles -u 1 static/* dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KleinDevDE/linktree.git"
+  },
+  "author": "KleinDev (Maximilian Klein)",
+  "license": "APSL-2.0",
+  "bugs": {
+    "url": "https://github.com/KleinDevDE/linktree/issues"
+  },
+  "homepage": "https://github.com/KleinDevDE/linktree#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.26",
+    "tailwindcss": "^3.3.3"
+  },
+  "dependencies": {
+    "copyfiles": "^2.4.1",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.9.3",
+    "parcel-resolver-ignore": "^2.1.5"
+  },
+  "parcelIgnore": [
+    "oembed.json"
+  ]
+}
