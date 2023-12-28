@@ -30,7 +30,7 @@
   "dependencies": {
     "copyfiles": "^2.4.1",
     "npm-run-all": "^4.1.5",
-    "parcel": "^2.9.3",
+    "parcel": "^2.10.3",
     "parcel-resolver-ignore": "^2.1.5"
   },
   "parcelIgnore": [
