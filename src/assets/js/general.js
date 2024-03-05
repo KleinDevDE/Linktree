@@ -12,7 +12,6 @@ function insertCurrentAge() {
  */
 function loadQuote(){
     let quotes= getContentFromURL(document.getElementById("quote").dataset.src);
-    console.log(quotes)
     if (quotes === null){
         console.error("Could not load Quotes!");
         return;
@@ -60,4 +59,7 @@ function getRandomOfArray(array){
 document.addEventListener("DOMContentLoaded", function () {
     insertCurrentAge();
     loadQuote();
+    $('#reload_quote').click(function(){
+        loadQuote();
+    });
 });
