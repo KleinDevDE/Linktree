@@ -6,7 +6,7 @@
     "dev": "npm-run-all --parallel dev:*",
     "dev:parcel": "parcel serve ./src/index.html",
     "dev:css": "tailwindcss -o src/assets/css/tailwind.css --watch",
-    "build": "npm-run-all build:empty_dist build:css build:parcel build:static_files",
+    "build": "npm-run-all build:empty_dist build:parcel build:css build:static_files",
     "build:empty_dist": "node -e \"var fs = require('fs'); try {fs.rmdirSync('dist',{recursive: true})} catch(e){}; process.exit(0);\"",
     "build:parcel": "parcel build ./src/index.html",
     "build:css": "tailwindcss -o src/assets/css/tailwind.css --minify",
