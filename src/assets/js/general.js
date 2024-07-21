@@ -40,11 +40,14 @@ function insertQuote(array, pickedData){
  * @returns {string|undefined} The content of the site. (nullable)
  */
 function getContentFromURL(url) {
-    return $.ajax({
-        type: "GET",
-        url: url,
-        async: false,
-    }).responseText;
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", url, false);
+    xhr.send();
+    if (xhr.status === 200) {
+        return xhr.responseText;
+    } else {
+        return null;
+    }
 }
 
 /**
@@ -59,7 +62,5 @@ function getRandomOfArray(array){
 document.addEventListener("DOMContentLoaded", function () {
     insertCurrentAge();
     loadQuote();
-    $('#reload_quote').click(function(){
-        loadQuote();
-    });
+    document.getElementById('reload_quote').onclick = function() {loadQuote();};
 });

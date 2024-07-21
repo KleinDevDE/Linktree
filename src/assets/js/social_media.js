@@ -5,6 +5,22 @@
 let githubUserID = 13904220;
 
 /**
+ * A simple synchronous function to get contents of an url
+ * @param url The url
+ * @returns {string|undefined} The content of the site. (nullable)
+ */
+function getContentFromURL(url) {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", url, false);
+    xhr.send();
+    if (xhr.status === 200) {
+        return xhr.responseText;
+    } else {
+        return null;
+    }
+}
+
+/**
  * Load the username and the count of the repos by the userID.
  * So updating the username will also update the direct link and the info in the button.
  */
