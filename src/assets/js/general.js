@@ -12,12 +12,15 @@ function insertCurrentAge() {
  */
 function loadQuote(){
     let quotes= getContentFromURL(document.getElementById("quote").dataset.src);
-    if (quotes === null){
-        console.error("Could not load Quotes!");
-        return;
-    }
-    quotes = JSON.parse(quotes);
-    insertQuote(quotes, getRandomOfArray(quotes));
+    quotes.then((value) => {
+        quotes = value;
+        if (quotes === null){
+            console.error("Could not load Quotes!");
+            return;
+        }
+        quotes = JSON.parse(quotes);
+        insertQuote(quotes, getRandomOfArray(quotes));
+    });
 }
 
 /**
@@ -30,6 +33,7 @@ function insertQuote(array, pickedData){
         insertQuote(array, getRandomOfArray(array));
         return;
     }
+    document.getElementById("quoteText").classList = "italic";
     document.getElementById("quoteText").innerHTML = pickedData.quote.toString().replace("\n", "<br>").replace(".", ".<br>");
     document.getElementById("quoteFooter").innerHTML = "~ " + pickedData.author;
 }
@@ -37,17 +41,19 @@ function insertQuote(array, pickedData){
 /**
  * A simple synchronous function to get contents of an url
  * @param url The url
- * @returns {string|undefined} The content of the site. (nullable)
+ * @returns {Promise} The content of the site. (nullable)
  */
-function getContentFromURL(url) {
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", url, false);
-    xhr.send();
-    if (xhr.status === 200) {
-        return xhr.responseText;
-    } else {
-        return null;
-    }
+async function getContentFromURL(url) {
+    return new Promise((resolve, reject) => {
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                resolve(xhr.responseText);
+            }
+        };
+        xhr.send();
+    });
 }
 
 /**
