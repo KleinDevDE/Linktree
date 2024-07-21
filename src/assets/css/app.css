@@ -7,11 +7,13 @@
     background-image: url('../images/bg_light.jpg');
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
 }
 .bg_dark {
     background-image: url('../images/bg_dark.jpg');
     background-position: center;
     background-size: auto;
+    background-attachment: fixed;
 }
 body { @apply bg_dark; }
 /*body.dark { @apply bg_dark; }*/

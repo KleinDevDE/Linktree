@@ -31,7 +31,7 @@ function insertQuote(array, pickedData){
         return;
     }
     document.getElementById("quoteText").innerHTML = pickedData.quote.toString().replace("\n", "<br>").replace(".", ".<br>");
-    document.getElementById("quoteFooter").innerHTML = "<i>~ " + pickedData.author + "</i>";
+    document.getElementById("quoteFooter").innerHTML = "~ " + pickedData.author;
 }
 
 /**
