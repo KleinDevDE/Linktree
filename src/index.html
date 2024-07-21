@@ -44,9 +44,6 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="stylesheet" href="assets/vendor/fontawesome-free-6.4.0-web/css/fontawesome.min.css"/>
-    <link rel="stylesheet" href="assets/vendor/fontawesome-free-6.4.0-web/css/brands.min.css"/>
-    <link rel="stylesheet" href="assets/vendor/fontawesome-free-6.4.0-web/css/solid.min.css"/>
 </head>
 
 <body class="text-white">
@@ -80,14 +77,16 @@
                     <span class="text-xl font-bold">Zufälliges Zitat</span>
                 </div>
                 <div class="flex !justify-end w-1/2">
-                    <button class="m-2 bg-gray-800 w-fit py-2 px-3 rounded-md hover:bg-gray-700" id="reload_quote">
-                        <i class="fas fa-sync-alt"></i> Anderes Zitat
+                    <button class="m-2 bg-gray-800 w-fit py-2 px-3 rounded-md hover:bg-gray-700 flex" id="reload_quote">
+                        <img src="assets/images/icons/reload.svg" alt="Reload icon" width="24" height="24" class=" mr-1"/> Anderes Zitat
                     </button>
                 </div>
             </div>
             <hr class="mt-3 pb-3 border-gray-700">
             <blockquote id="quote" data-src="quotes.json">
-                <div id="quoteText" class="italic"></div>
+                <div id="quoteText" class="italic flex justify-center pt-10">
+                    <img src="assets/images/icons/reload.svg" width="24" height="24" alt="Loading icon" class="animate-spin"/> Loading...
+                </div>
                 <footer id="quoteFooter" class="text-right mt-2"></footer>
             </blockquote>
         </div>
