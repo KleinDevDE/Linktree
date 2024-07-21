@@ -9,7 +9,7 @@ button {
 
 
 .logo {
-    @apply w-10 h-10;
+    @apply w-10 h-10 max-h-[64px] max-w-[64px];
 }
 
 .pulse {
